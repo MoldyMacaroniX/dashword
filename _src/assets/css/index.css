@@ -731,6 +731,10 @@ hr {
     width: 100%;
     min-width: 0;
     min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .unit img {
