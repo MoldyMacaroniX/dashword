@@ -1,0 +1,48 @@
+---
+layout: templates/browse.njk
+
+pagination:
+  data: collections.authorPages
+  size: 1
+  alias: authorData
+permalink: "/authors/{{ authorData.authorKey }}/{% if authorData.pageNum > 1 %}{{ authorData.pageNum }}/{% endif %}index.html"
+eleventyComputed:
+    title: "Articles by {% set author = authorData.authorKey | getAuthor(authors) %}{{ author.name }}"
+---
+
+{% set paginationBaseUrl = "/authors/" ~ authorData.authorKey ~ "/" %}
+{% set currentPageNum = authorData.pageNum %}
+{% set totalPagesCount = authorData.totalPages %}
+
+{% if currentPageNum == 2 %}
+     {% set prevUrl = paginationBaseUrl %}
+{% elif currentPageNum > 2 %}
+     {% set prevUrl = paginationBaseUrl ~ (currentPageNum - 1) ~ "/" %}
+{% else %}
+     {% set prevUrl = null %}
+{% endif %}
+
+{% if currentPageNum < totalPagesCount %}
+    {% set nextUrl = paginationBaseUrl ~ (currentPageNum + 1) ~ "/" %}
+{% else %}
+     {% set nextUrl = null %}
+{% endif %}
+
+{% set author = authorData.authorKey | getAuthor(authors) %}
+
+{% include "partials/author.njk" %}
+
+{% if author.desc %}
+<div class="article">
+    <p>{{ author.desc }}</p>
+</div>
+{% endif %}
+
+{% for post in authorData.posts %}
+    {% include "partials/posts.njk" %}
+    {% if ((loop.index == 2) or (loop.index == 4) or (loop.index == 6) or (loop.index == 8)) and (not loop.last) %}
+        {% include "ads/content.njk" %}
+    {% endif %}
+{% endfor %}
+
+{% include "partials/pagination.njk" %}

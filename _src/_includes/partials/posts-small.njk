@@ -1,0 +1,35 @@
+<div class="post post-small">
+    <a href="{{ post.url }}" class="aspect">
+        <img src="{{ post.data.image }}" alt="" loading="lazy">
+        {% if post.data.videoID %}
+        <div class="video-icon" aria-hidden="true">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 20.1957V3.80421C6 3.01878 6.86395 2.53993 7.53 2.95621L20.6432 11.152C21.2699 11.5436 21.2699 12.4563 20.6432 12.848L7.53 21.0437C6.86395 21.46 6 20.9812 6 20.1957Z"></path></svg>
+        </div>
+        {% endif %}
+    </a>
+    <div class="post-tags">
+        {% for tag in post.data.tags | sort(tag) | filterTags %}
+            {% set tagInfos = tag | getTagInfo(tagInfo) %}
+            <a href="/categories/{{ tag }}/" class="post-tag">
+                {{ tagInfos.name }}
+            </a>
+        {% endfor %}
+    </div>
+    <a href="{{ post.url }}" class="title truncate truncate-3">
+        {{ post.data.title }}
+    </a>
+    <a href="{{ post.url }}" class="desc truncate truncate-2">
+        {{ post.data.desc }}
+    </a>
+    <div class="meta">
+        {% set author = post.data.author | getAuthor(authors) %}
+        <a class="meta-item" href="/authors/{{ post.data.author }}/">
+            <svg role="img" aria-label="Post by" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+            <span>{{ author.name }}</span>
+        </a>
+        <div class="meta-item">
+            <svg role="img" aria-label="Posted on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path></svg>
+            <span>{{ post.data.date | date }}</span>
+        </div>
+    </div>
+</div>

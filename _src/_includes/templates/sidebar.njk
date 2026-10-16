@@ -1,0 +1,63 @@
+---
+layout: base.njk
+---
+
+<div class="sidebar-wrapper cols" id="sidebar-wrapper">
+    {% if postType == "course" %}
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner spacer" id="sidebar-inner">
+            <div class="course-links">
+                <h1>{{ coursename }}</h1>
+                {% for i in courseinfo %}
+                    {% set courseURL %}/courses/{{ courseslug }}/{{ i.url }}/{% endset %}
+                    {% if loop.first %}
+                        {% set courseURL %}/courses/{{ courseslug }}/{% endset %}
+                    {% endif %}
+                    <hr>
+                    <a href="{{ courseURL }}" class="course-link{% if page.url == courseURL %} active{% endif %}">{{ i.name }}</a>
+                {% endfor %}
+                <hr>
+                <div class="course-link-space">
+                    <a href="/courses/" class="btn btn-wide">More Courses</a>
+                </div>
+            </div>
+            {% include "ads/sidebar.njk" %}
+        </div>
+    </aside>
+    {% endif %}
+    <div class="main-content col">
+        {{ content | safe }}
+    </div>
+    {% if postType != "course" %}
+    <aside class="sidebar" id="sidebar">
+        {% if not housekeeping %}
+        <div class="sidebar-inner spacer" id="sidebar-inner">
+            <h1 class="heading">Featured</h1>
+            {% for post in collections.featured | reverse | head(3) %}
+                {% include "partials/posts-small.njk" %}
+            {% endfor %}
+            <a href="/categories/featured/" class="btn btn-wide">
+                Featured
+            </a>
+            {% include "ads/sidebar.njk" %}
+        </div>
+        {% endif %}
+    </aside>
+    {% endif %}
+</div>
+
+<!-- Sidebar -->
+<script type="text/javascript" src="/assets/js/resize-sensor.js"></script>
+<script type="text/javascript" src="/assets/js/sidebar.js"></script>
+<script>
+    const styles = getComputedStyle(document.documentElement);
+    const rawValue = styles.getPropertyValue('--gap').trim();
+    const numericValue = parseInt(rawValue, 10); 
+    var sidebar = new StickySidebar('#sidebar', {
+        containerSelector: '#sidebar-wrapper',
+        innerWrapperSelector: '#sidebar-inner',
+        topSpacing: document.getElementById("navbar").offsetHeight + numericValue,
+        bottomSpacing: numericValue,
+        minWidth: 800
+    });
+</script>

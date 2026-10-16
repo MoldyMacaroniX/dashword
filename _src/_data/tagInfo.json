@@ -1,0 +1,27 @@
+[
+    {
+        "key":"2.2",
+        "name":"2.21",
+        "desc":"The latest Geometry Dash 2.2 and 2.21 news. Everything prior to update 2.3 will be covered here."
+    },
+    {
+        "key":"demonlist",
+        "name":"Demon List",
+        "desc":"The latest Geometry Dash Demon List news. From top 1 extreme demons such as Tidal Wave, Slaughterhouse, and Society to upcoming levels like Grief, all Demon List news is covered here."
+    },
+    {
+        "key":"mods",
+        "name":"Mods",
+        "desc":"Discover the latest and greatest Geometry Dash mods for Geode, Mega Hack, and other mod loaders."
+    },
+    {
+        "key":"guide",
+        "name":"Guide",
+        "desc":"From how to get icons to downloading Geometry Dash mods, all kinds of Geometry Dash guides will be covered here."
+    },
+    {
+        "key":"news",
+        "name":"News",
+        "desc":"The latest Geometry Dash news. From extreme demons to 2.21 leaks, this topic covers everything new happening in Geometry Dash."
+    }
+]

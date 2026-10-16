@@ -1,0 +1,129 @@
+---
+title: "Geometry Dash Vault Codes: Get Free Icons, Ships, UFOs, & More (2026)"
+desc: With silver user coins, you can unlock a lot of Geometry Dash icons,
+  ships, UFOs, and more.
+date: 2022-09-18
+tags:
+  - featured
+  - guide
+author: moldy
+image: /assets/img/maxresdefault_41.webp
+imageSource: https://youtu.be/YAazssI4cPg?si=luRTxY0zmfpWKw0C
+---
+
+You can get easy Geometry Dash icons, ships, UFOs, and more by simply entering some codes. It's free loot!
+
+In Geometry Dash, there are four vaults that you can enter codes in: the [Wraith Vault](#wraith-vault-codes), the [Vault](/posts/geometry-dash-all-vaults-and-secrets-2022/#the-vault), the [Vault of Secrets](/posts/geometry-dash-all-vaults-and-secrets-2022/#vault-of-secrets), and the [Chamber of Time](/posts/geometry-dash-all-vaults-and-secrets-2022/#chamber-of-time). So, here is a comprehensive list of every single vault code in Geometry Dash.
+
+- [Wraith Vault Codes](#wraith-vault-codes)
+- [The Vault Codes](#the-vault-codes)
+- [Vault of Secrets Codes](#vault-of-secrets-codes)
+- [Chamber of Time Codes](#chamber-of-time-codes)
+
+# Wraith Vault Codes
+
+![Wraith Vault](/assets/img/GINXuSC.webp)
+
+The Wraith Vault is free to unlock, you just have to know where to look. You can [follow these instructions to unlock the Wraith Vault](/posts/geometry-dash-all-vaults-and-secrets-2022/#wraith-vault).
+
+Not all Wraith Vault codes are known, but here are some that reward free icons and a Golden Key:
+
+- **GD2025**
+- **Back on Dash**
+- **Geometry**
+- **Citadel**
+- **Retrospective**
+- **Ruins**
+- **Cheat Codes**
+- **Backstreet Boy**
+- **Noel Electra**
+
+Note that you will need an internet connection in order to redeem these codes.
+
+**To enter a code, type the code and press the Wraith to input it.**
+
+# The Vault Codes
+
+![The Vault](/assets/img/aSGtgnb.webp)
+
+To unlock The Vault, [follow these instructions](/posts/geometry-dash-all-vaults-and-secrets-2022/#the-vault).
+
+First, enter the simple codes below to get free icons, including cubes, ships, UFOs, waves, and other loot.
+
+- **Lenny**
+- **Blockbite**
+- **Spooky**
+- **Neverending**
+- **Mule**
+- **Ahead**
+- **Gandalfpotter**
+- **Sparky**
+- **Robotop**
+
+However, there are two more tricky codes.
+
+- **[Your Username]** — enter your username.
+- **8 16 30 32 46 84** — enter each of these numbers individually, in order.
+
+**To enter a code, type the code and press the NPC's face.**
+
+# Vault of Secrets Codes
+
+![Vault of Secrets](/assets/img/0bDZMJo.webp)
+
+To unlock the Vault of Secrets, [follow these instructions](/posts/geometry-dash-all-vaults-and-secrets-2022/#vault-of-secrets).
+
+First, enter the simple codes below to get free icons, including cubes, colors, a secret level, and other loot.
+
+- **Octocube**
+- **Brain Power**
+- **Seven**
+- **Thechickenisonfire**
+- **Gimmiethecolor**
+- **The Challenge** — unlocks a secret level that you need 200 diamonds to play.
+
+However, there are three more tricky codes.
+
+- **[Your Star Count]** — enter how many stars you have
+- **Glubfub** — only works if you follow these instructions:
+    1. Keep pressing the keymaster NPC face until he mentions Spooky's coin. Keep pressing until the keymaster is done talking about Spooky's coin.
+    2. Enter [The Vault](#the-vault-codes) and keep pressing the NPC's face until he mentions Glubfub. Keep pressing until he is done talking about Glubfub.
+    3. Go back to the Vault of Secrets and enter the code **Glubfub**.
+- **Cod3Breaker** — only works if you follow these instructions:
+    1. After entering **Cod3Breaker**, 6 numbers will flash on screen really quickly. Make sure you record them with another device or write them down in order.
+    2. Use the online **Cod3Breaker** solver below or follow these next two instructions.
+    2. Let's say the numbers are A, B, C, D, E, and F. Perform the following arithmetic:
+        - B - A = V
+        - C - B = W
+        - D - C = X
+        - E - D = Y
+        - F - E = Z
+    3. Then, the code you enter next will be the string of numbers that is VWXYZ.
+
+{% include 'partials/snippets/codebreaker.njk' %}
+
+For a video tutorial of how to solve **Cod3Breaker**, [see this tutorial](https://youtu.be/7aBkYQFbwes).
+
+**To enter a code, type the code and press the NPC's face.**
+
+# Chamber of Time Codes
+
+![Chamber of Time](/assets/img/C1jrRjy.webp)
+
+To unlock the Chamber of Time, [follow these instructions](/posts/geometry-dash-all-vaults-and-secrets-2022/#chamber-of-time).
+
+Fortunately, all the codes available in the Chamber of Time are easy and don't require any complicated puzzle solving.
+
+Enter the simple codes below to get free icons, including cubes, waves, and other loot.
+
+- **Volcano**
+- **River**
+- **Silence**
+- **Darkness**
+- **Hunger**
+
+**To enter a code, type the code and press the NPC's face.**
+
+---
+
+And there you have every single vault code in Geometry Dash as of 2022. If you want to learn how to unlock each of these vaults and other secret areas, see [this guide on how to unlock every secret area in Geometry Dash](/posts/geometry-dash-all-vaults-and-secrets-2022/).

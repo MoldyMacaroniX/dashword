@@ -1,0 +1,24 @@
+---
+title: The Geometry Dash Podcast
+layout: templates/browse.njk
+
+pagination:
+    data: collections.podcast
+    size: 10
+    alias: postsList
+permalink: "/podcast/{% if pagination.pageNumber > 0 %}{{ pagination.pageNumber + 1 }}/{% endif %}index.html"
+---
+
+{% set currentPageNum = pagination.pageNumber + 1 %}
+{% set totalPagesCount = pagination.pages | length %}
+{% set prevUrl = pagination.href.previous %}
+{% set nextUrl = pagination.href.next %}
+
+{% for post in postsList %}
+    {% include "partials/posts.njk" %}
+    {% if ((loop.index == 2) or (loop.index == 4) or (loop.index == 6) or (loop.index == 8)) and (not loop.last) %}
+        {% include "ads/content.njk" %}
+    {% endif %}
+{% endfor %}
+
+{% include "partials/pagination.njk" %}

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% include "ads/code.njk" %}
+
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }} | {{ metadata.name }}</title>
+
+    <script>
+        // Immediately invoked function to prevent theme flashing
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'system';
+            const htmlElement = document.documentElement;
+            if (savedTheme === 'dark' || (savedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                htmlElement.classList.add('dark');
+            } else {
+                htmlElement.classList.remove('dark');
+            }
+            // Also keep track of the exact current setting string if needed for CSS attribute styling
+            htmlElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/index.css">
+
+    <link rel="icon" href="/assets/branding/logo.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#0067EE">
+    <meta name="title" content="{{ title or metadata.title }} | {{ metadata.name }}">
+    <meta name="description" content="{{ desc or metadata.desc }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="og:title" content="{{ title or metadata.title }} | {{ metadata.name }}">
+    <meta property="og:site_name" content="{{ metadata.name }}">
+    <meta property="og:description" content="{{ desc or metadata.desc }}">
+    <meta property="og:image" content="{{ image or metadata.image }}">
+    <meta property="twitter:card" content="summary_large_image">
+
+    <link rel="apple-touch-icon" href="/assets/branding/app.png">
+    <meta name="apple-mobile-web-app-title" content="Stats Viewer">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body class="preload">
+
+    <header class="navbar-wrapper" id="navbar">
+        <div class="navbar container">
+            <div class="navbar-section">
+                <button class="menu-open" onclick="toggleMenu();" aria-label="Toggle menu">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg>
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.5859 12L2.79297 4.20706L4.20718 2.79285L12.0001 10.5857L19.793 2.79285L21.2072 4.20706L13.4143 12L21.2072 19.7928L19.793 21.2071L12.0001 13.4142L4.20718 21.2071L2.79297 19.7928L10.5859 12Z"></path></svg>
+                </button>
+                <a href="/" class="logo">
+                    <img src="/assets/branding/logo.svg" alt="">
+                    <span>{{ metadata.name }}</span>
+                </a>
+                <div class="navbar-links">
+                    <a href="/" class="navbar-link">
+                        <span>Home</span>
+                    </a>
+                    <div class="dropdown-wrapper">
+                        <a href="/categories/2.2/" class="navbar-link">
+                            <span>2.21</span>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                        </a>
+                        <div class="dropdown">
+                            <div class="container">
+                                <div class="grid-4 dropdown-posts">
+                                    {% for post in collections["2.2"] | reverse | head(4) %}
+                                        {% include "partials/posts-small.njk" %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-wrapper">
+                        <a href="/categories/news/" class="navbar-link">
+                            <span>News</span>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                        </a>
+                        <div class="dropdown">
+                            <div class="container">
+                                <div class="grid-4 dropdown-posts">
+                                    {% for post in collections["news"] | reverse | head(4) %}
+                                        {% include "partials/posts-small.njk" %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-wrapper">
+                        <a href="/categories/demonlist/" class="navbar-link">
+                            <span>Demon List</span>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                        </a>
+                        <div class="dropdown">
+                            <div class="container">
+                                <div class="grid-4 dropdown-posts">
+                                    {% for post in collections["demonlist"] | reverse | head(4) %}
+                                        {% include "partials/posts-small.njk" %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-wrapper">
+                        <a href="/categories/mods/" class="navbar-link">
+                            <span>Mods</span>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                        </a>
+                        <div class="dropdown">
+                            <div class="container">
+                                <div class="grid-4 dropdown-posts">
+                                    {% for post in collections["mods"] | reverse | head(4) %}
+                                        {% include "partials/posts-small.njk" %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-wrapper">
+                        <a href="/categories/guide/" class="navbar-link">
+                            <span>Guide</span>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                        </a>
+                        <div class="dropdown">
+                            <div class="container">
+                                <div class="grid-4 dropdown-posts">
+                                    {% for post in collections["guide"] | reverse | head(4) %}
+                                        {% include "partials/posts-small.njk" %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-section">
+                <a class="btn-icon" href="/search/" aria-label="Search">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+                </a>
+                <a href="/contribute/" class="btn">
+                    <span>Contribute</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="menu">
+        <a href="/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 20C20 20.5523 19.5523 21 19 21H5C4.44772 21 4 20.5523 4 20V11L1 11L11.3273 1.6115C11.7087 1.26475 12.2913 1.26475 12.6727 1.6115L23 11L20 11V20ZM11 13V19H13V13H11Z"></path></svg>
+            <span>Home</span>
+        </a>
+        <hr>
+        <a href="/categories/2.2/" class="menu-link menu-link-no-icon">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg>
+            <span>2.21</span>
+        </a>
+        <a href="/categories/news/" class="menu-link menu-link-no-icon">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg>
+            <span>News</span>
+        </a>
+        <a href="/categories/demonlist/" class="menu-link menu-link-no-icon">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg>
+            <span>Demon List</span>
+        </a>
+        <a href="/categories/mods/" class="menu-link menu-link-no-icon">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg>
+            <span>Mods</span>
+        </a>
+        <a href="/categories/guide/" class="menu-link menu-link-no-icon">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg>
+            <span>Guide</span>
+        </a>
+        <hr>
+        <a href="/quizzes/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.9994 2V4H14.9994V7.24291C14.9994 8.40051 15.2506 9.54432 15.7357 10.5954L20.017 19.8714C20.3641 20.6236 20.0358 21.5148 19.2836 21.8619C19.0865 21.9529 18.8721 22 18.655 22H5.34375C4.51532 22 3.84375 21.3284 3.84375 20.5C3.84375 20.2829 3.89085 20.0685 3.98181 19.8714L8.26306 10.5954C8.74816 9.54432 8.99939 8.40051 8.99939 7.24291V4H7.99939V2H15.9994ZM12.9994 4H10.9994V8H12.9994V4Z"></path></svg>
+            <span>Quizzes</span>
+        </a>
+        <a href="/courses/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M21 4H7C5.89543 4 5 4.89543 5 6C5 7.10457 5.89543 8 7 8H21V21C21 21.5523 20.5523 22 20 22H7C4.79086 22 3 20.2091 3 18V6C3 3.79086 4.79086 2 7 2H20C20.5523 2 21 2.44772 21 3V4ZM20 7H7C6.44772 7 6 6.55228 6 6C6 5.44772 6.44772 5 7 5H20V7Z"></path></svg>
+            <span>Courses</span>
+        </a>
+        <a href="/podcast/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9998 1C14.7612 1 16.9998 3.23858 16.9998 6V10C16.9998 12.7614 14.7612 15 11.9998 15C9.23833 15 6.99976 12.7614 6.99976 10V6C6.99976 3.23858 9.23833 1 11.9998 1ZM3.05469 11H5.07065C5.55588 14.3923 8.47329 17 11.9998 17C15.5262 17 18.4436 14.3923 18.9289 11H20.9448C20.4837 15.1716 17.1714 18.4839 12.9998 18.9451V23H10.9998V18.9451C6.82814 18.4839 3.51584 15.1716 3.05469 11Z"></path></svg>
+            <span>Podcast</span>
+        </a>
+        <a href="/categories/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10.9042 2.10025L20.8037 3.51446L22.2179 13.414L13.0255 22.6063C12.635 22.9969 12.0019 22.9969 11.6113 22.6063L1.71184 12.7069C1.32131 12.3163 1.32131 11.6832 1.71184 11.2926L10.9042 2.10025ZM13.7327 10.5855C14.5137 11.3666 15.78 11.3666 16.5611 10.5855C17.3421 9.80448 17.3421 8.53815 16.5611 7.7571C15.78 6.97606 14.5137 6.97606 13.7327 7.7571C12.9516 8.53815 12.9516 9.80448 13.7327 10.5855Z"></path></svg>
+            <span>Categories</span>
+        </a>
+        <a href="/authors/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13Z"></path></svg>
+            <span>Authors</span>
+        </a>
+        <hr>
+        <a href="/search/" class="menu-link">
+            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path></svg>
+            <span>Search</span>
+        </a>
+        <div class="menu-space">
+            <a href="/contribute/" class="btn btn-wide">Contribute</a>
+        </div>
+    </div>
+    <div class="menu-bg" onclick="toggleMenu();"></div>
+    
+    <main class="container">
+        <div class="layout">
+
+            {% if page.url == "/" %}
+                {% include "partials/featured.njk" %}
+            {% endif %}
+
+            {% include "ads/wide.njk" %}
+
+            {{ content | safe }}
+
+            {% if not housekeeping %}
+            {% include "ads/wide.njk" %}
+
+            <div class="grid-4 featured-row featured-row-bottom">
+                {% for post in collections["demonlist"] | reverse | head(4) %}
+                    {% include "partials/posts-small.njk" %}
+                {% endfor %}
+            </div>
+
+            <div class="grid-4 featured-row featured-row-bottom">
+                {% for post in collections["2.2"] | reverse | head(4) %}
+                    {% include "partials/posts-small.njk" %}
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% include "ads/wide.njk" %}
+
+        </div>
+    </main>
+
+    <footer class="footer-wrapper">
+        <div class="footer container">
+            <div class="cols">
+                <div class="col">
+                    <a href="/" class="logo">
+                        <img src="/assets/branding/logo.svg" alt="">
+                        <span>{{ metadata.name }}</span>
+                    </a>
+                    <p>
+                        {{ metadata.desc }}
+                    </p>
+                    <div class="form">
+                        <div class="select-wrapper">
+                            <select id="themeSelector">
+                                <option value="system">System</option>
+                                <option value="light">Light</option>
+                                <option value="dark">Dark</option>
+                            </select>
+                            <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.9999 13.1714L16.9497 8.22168L18.3639 9.63589L11.9999 15.9999L5.63599 9.63589L7.0502 8.22168L11.9999 13.1714Z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1 class="footer-title">Explore</h1>
+                    <div class="footer-links">
+                        <a href="/" class="footer-link">
+                            Home
+                        </a>
+                        <a href="/quizzes/" class="footer-link">
+                            Quizzes
+                        </a>
+                        <a href="/courses/" class="footer-link">
+                            Courses
+                        </a>
+                        <a href="/podcast/" class="footer-link">
+                            Podcast
+                        </a>
+                        <a href="/categories/" class="footer-link">
+                            Categories
+                        </a>
+                        <a href="/authors/" class="footer-link">
+                            Authors
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1 class="footer-title">Contribute</h1>
+                    <div class="footer-links">
+                        <a href="/contribute/" class="footer-link">
+                            Contribute
+                        </a>
+                        <a href="/contact/" class="footer-link">
+                            Contact
+                        </a>
+                        <a href="/about/" class="footer-link">
+                            About
+                        </a>
+                        <a href="/badges/" class="footer-link">
+                            Badges
+                        </a>
+                        <a href="/twitter/" class="footer-link">
+                            Twitter
+                        </a>
+                        <a href="/discord/" class="footer-link">
+                            Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="note">
+                <div>
+                    <span>
+                        Copyright &copy; {% year %} <a target="_blank" href="{{ metadata.owner_website }}">{{ metadata.owner }}</a> and <a href="/authors/">Contributors</a>
+                    </span>
+                </div>
+                <div>
+                    <a href="/privacy-policy/">Privacy Policy</a>
+                    <a href="/author-terms/">Author Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="/assets/js/search.js"></script>
+    <script type="text/javascript" src="/assets/js/theme.js"></script>
+
+    <script>
+        window.addEventListener("load", () => {
+            document.body.classList.remove("preload");
+        });
+    </script>
+
+    {# Open external links in a new tab #}
+    <script>
+        window.onload = function() {
+            for (var links = document.links, i = 0, a; a = links[i]; i++) {
+                if (a.host !== location.host) {
+                        a.target = '_blank';
+                }
+            }
+        }
+    </script>
+
+    {# Mobile menu #}
+    <script>
+        // Select the hamburger button and the menu container
+        const menuToggle = document.querySelector('.menu-open');
+        const navMenu = document.querySelector('.menu');
+        const menuBg = document.querySelector('.menu-bg');
+
+        // Function to toggle menu
+        function toggleMenu() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuBg.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

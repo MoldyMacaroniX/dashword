@@ -1,0 +1,4 @@
+{
+    "layout":"templates/post.njk",
+    "postType":"course"
+}

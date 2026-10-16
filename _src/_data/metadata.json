@@ -1,0 +1,23 @@
+{
+    "name":"Dashword",
+    "legal_name":"Dashword.net",
+    "image":"/assets/img/main2.webp",
+    "title":"Geometry Dash News",
+    "desc":"Dashword publishes Geometry Dash news, guides, reviews, opinions, lists, and all kinds of stories. All for free.",
+    "domain":"https://www.dashword.net/",
+    "domain_no_trailing_slash":"https://www.dashword.net",
+    "owner":"Dashword.net",
+    "owner_website":"/",
+    "isAds":true,
+    "feed": {
+		"subtitle": "Dashword publishes Geometry Dash news, guides, reviews, opinions, lists, and all kinds of stories. All for free.",
+		"filename": "feed.xml",
+		"path": "/feed/feed.xml",
+		"url": "https://www.dashword.net/feed/feed.xml",
+		"id": "https://www.dashword.net/"
+	},
+    "author": {
+        "name":"Dashword.net",
+        "email":"support@dashword.net"
+    }
+}

@@ -1,0 +1,44 @@
+# https://johnkavanagh.co.uk/writing/redirect-a-default-netlify-subdomain-to-your-custom-domain/
+
+https://gd-website.netlify.com/*   https://www.dashword.net/:splat   301! 
+
+# Redirects for removed pages/links
+
+/submit-article /contribute/
+/submit-article/ /contribute/
+/create-profile /contribute/
+/create-profile/ /contribute/
+/handbook/ /contribute/
+/how-to-post-an-article/ /contribute/
+/article-standards/ /contribute/
+/working-with-images/ /contribute/
+/citing-sources/ /contribute/
+/syntax-components/ /contribute/
+/writing-tips/ /contribute/
+/publish-article/ /contribute/
+/author-profile/ /contribute/
+/code-of-conduct/ /community-guidelines/
+/verified/ /badges/
+/daily/ /today-in-geometry-dash-history/
+/posts/bloodlust-falls-off-demonlist-after-7-years-zodiac-moves-to-extended-list/ /posts/3-former-top-1-hardest-demons-fall-off-demonlist-bloodlust-zodiac-kenos/
+/style-guide/ /courses/contribute-to-dashword/style-guide/
+/ethics-statement /courses/contribute-to-dashword/style-guide/
+/verified-authors/ /authors/
+
+# Shortened links
+
+/discord https://discord.gg/SqZuGCpHMm
+/twitter https://x.com/DashwordGD
+/github https://github.com/MoldyMacaroniX/dashword
+
+/escape-room /posts/escape-room/
+
+/dashword-blue https://youtu.be/dQw4w9WgXcQ
+
+# Refs
+
+/ref/moldy/ /?ref=Moldy
+
+# Author page redirects
+
+/authors/moldymacaronix/ /authors/moldy/

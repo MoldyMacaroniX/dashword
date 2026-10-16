@@ -1,0 +1,5 @@
+{
+    "permalink":"/quizzes/{{ pageSlug or page.fileSlug }}/",
+    "layout":"templates/quiz.njk",
+    "postType":"quiz"
+}

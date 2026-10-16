@@ -1,0 +1,5 @@
+{
+    "permalink":"/podcast/{{ pageSlug or page.fileSlug }}/",
+    "layout":"templates/post.njk",
+    "postType":"podcast"
+}

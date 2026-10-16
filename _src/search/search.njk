@@ -1,0 +1,24 @@
+---
+title: Search
+layout: templates/browse.njk
+permalink: /search/
+---
+
+<form action="" class="search" id="search-form" style="flex: 0;">
+    <input type="search" placeholder="Search {{ metadata.name }}..." id="search-input">
+    <button class="btn"><span>Search</span></button>
+</form>
+
+<div class="posts" id="search-results">
+    <div class="panel panel-center"><p><strong>Search all of {{ metadata.name }}...</strong></p></div>
+</div>
+<nav id="search-pagination" class="pagination">
+    <div class="btn disabled">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg>
+        <span>Previous</span>
+    </div>
+    <div class="btn disabled">
+        <span>Next</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg>
+    </div>
+</nav>

@@ -1,0 +1,4 @@
+{
+    "permalink":"/{{ pageSlug or page.fileSlug }}/",
+    "layout":"templates/post.njk"
+}

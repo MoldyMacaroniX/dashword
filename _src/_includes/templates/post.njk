@@ -1,0 +1,171 @@
+---
+layout: templates/sidebar.njk
+---
+
+{% if not metadata.isAds or hideAds %}
+<style>
+    .unit-wrapper {
+        display: none;
+    }
+</style>
+{% endif %}
+
+<article class="article-wrapper" data-pagefind-body>
+    <div class="article-meta">
+        {% if tags %}
+        <div class="post-tags post-tags-big">
+            {% for tag in tags | sort(tag) | filterTags %}
+                {% set tagInfos = tag | getTagInfo(tagInfo) %}
+                <a href="/categories/{{ tag }}/" class="post-tag">
+                    {{ tagInfos.name }}
+                </a>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if postType == "quiz" %}
+        <div class="post-tags post-tags-big">
+            <a href="/quizzes/" class="post-tag">
+                Quiz
+            </a>
+        </div>
+        {% endif %}
+        {% if postType == "course" %}
+        <div class="post-tags post-tags-big">
+            <a href="/courses/" class="post-tag">
+                Course
+            </a>
+        </div>
+        {% endif %}
+        {% if postType == "podcast" %}
+        <div class="post-tags post-tags-big">
+            <a href="/podcast/" class="post-tag">
+                Podcast
+            </a>
+        </div>
+        {% endif %}
+        <h1>{{ title }}</h1>
+        {% if author %}
+        <div class="desc-wrapper">
+            <div class="desc">
+                {% set authorInfo = author | getAuthor(authors) %}
+                By <a href="/authors/{{ author }}/">{{ authorInfo.name }}</a> on <span>{{ date | dateFull }}</span>.
+            </div>
+            {# Alternative to desc #}
+            {# <div class="meta">
+                {% set authorInfo = author | getAuthor(authors) %}
+                <a class="meta-item" href="/authors/{{ author }}/">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 22H18V20C18 18.3431 16.6569 17 15 17H9C7.34315 17 6 18.3431 6 20V22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13ZM12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"></path></svg>
+                    <span>{{ authorInfo.name }}</span>
+                </a>
+                <div class="meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z"></path></svg>
+                    <span>{{ date | dateFull }}</span>
+                </div>
+            </div> #}
+            <div class="shares">
+                <a aria-label="Share on Twitter" target="_blank" href="https://twitter.com/share?text={{ title }}&url={{ metadata.domain_no_trailing_slash }}{{ page.url }}" class="share">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6874 3.0625L12.6907 8.77425L8.37045 3.0625H2.11328L9.58961 12.8387L2.50378 20.9375H5.53795L11.0068 14.6886L15.7863 20.9375H21.8885L14.095 10.6342L20.7198 3.0625H17.6874ZM16.6232 19.1225L5.65436 4.78217H7.45745L18.3034 19.1225H16.6232Z"></path></svg>
+                </a>
+                <a aria-label="Share on Reddit" target="_blank" href="https://www.reddit.com/submit?url={{ metadata.domain_no_trailing_slash }}{{ page.url }}&title={{ title }}" class="share">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.2539 0.899902C18.5668 0.899902 19.6316 1.96405 19.6318 3.27687C19.6317 4.58978 18.5668 5.65482 17.2539 5.65482C16.1306 5.65482 15.1909 4.87499 14.9424 3.82766C13.5597 4.01397 12.4902 5.19938 12.4902 6.63237C12.4901 6.63491 12.4884 6.63766 12.4883 6.64018C14.6161 6.71893 16.5617 7.31815 18.1025 8.27203C18.6682 7.83745 19.3761 7.57873 20.1445 7.57867C21.9976 7.57867 23.5 9.08109 23.5 10.9342C23.4999 12.2727 22.7158 13.4281 21.582 13.9664C21.4749 17.8644 17.2317 20.9995 12.0088 20.9997C6.78922 20.9997 2.54712 17.8687 2.43457 13.9742C1.29198 13.4392 0.500107 12.2792 0.5 10.9342C0.500017 9.08111 2.00243 7.5787 3.85547 7.57867C4.62712 7.57867 5.33746 7.84005 5.9043 8.27789C7.43009 7.33076 9.35438 6.73323 11.46 6.64409C11.4598 6.64061 11.459 6.63687 11.459 6.63335C11.459 4.63684 12.9818 2.98832 14.9268 2.78957C15.1518 1.71052 16.1081 0.89991 17.2539 0.899902ZM12.0078 15.7164C10.8425 15.7164 9.72472 15.7734 8.69238 15.8785C8.51571 15.896 8.40381 16.0793 8.47266 16.2428C9.05146 17.6248 10.4169 18.5963 12.0078 18.5963C13.5988 18.5963 14.9655 17.6249 15.543 16.2428C15.612 16.0792 15.4987 15.8959 15.3232 15.8785C14.2896 15.7734 13.1732 15.7164 12.0078 15.7164ZM7.5752 10.9137C6.6347 10.9137 5.82654 11.7039 5.77051 12.9117C5.71483 14.1194 6.43257 14.776 7.37305 14.776C8.25466 14.7759 9.01895 14.3896 9.15723 13.3463L9.17676 13.1305C9.23263 11.9225 8.51568 10.9138 7.5752 10.9137ZM16.4424 10.9137C15.5018 10.9137 14.7849 11.9225 14.8408 13.1305L14.8594 13.3463C14.9977 14.3896 15.7629 14.7759 16.6445 14.776C17.585 14.776 18.3018 14.1194 18.2461 12.9117C18.1901 11.7039 17.3829 10.9137 16.4424 10.9137Z"></path></svg>
+                </a>
+                <a aria-label="Share on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ metadata.domain_no_trailing_slash }}{{ page.url }}" class="share">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5H16.5L17.5 9.5H14V7.5C14 6.47062 14 5.5 16 5.5H17.5V2.1401C17.1743 2.09685 15.943 2 14.6429 2C11.9284 2 10 3.65686 10 6.69971V9.5H7V13.5H10V22H14V13.5Z"></path></svg>
+                </a>
+                <a aria-label="Share via email" target="_blank" href="mailto:?subject={{ title }}&body={{ metadata.domain_no_trailing_slash }}{{ page.url }}" class="share">
+                    <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM12.0606 11.6829L5.64722 6.2377L4.35278 7.7623L12.0731 14.3171L19.6544 7.75616L18.3456 6.24384L12.0606 11.6829Z"></path></svg>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% if image and not videoID and postType != "course" %}
+        <div class="aspect">
+            <img src="{{ image }}" alt="">
+            {% if imageSource %}
+            <a target="_blank" href="{{ imageSource }}" class="image-source">Cover Source</a>
+            {% endif %}
+        </div>
+        {% endif %}
+        {% if videoID %}
+        <a href="https://www.youtube.com/watch?v={{ videoID }}" target="_blank" class="aspect aspect-video" aria-label="Watch related video">
+            <img src="{{ image }}" alt="Thumbnail for related video">
+            <div aria-hidden="true" class="video-icon">
+                <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6 20.1957V3.80421C6 3.01878 6.86395 2.53993 7.53 2.95621L20.6432 11.152C21.2699 11.5436 21.2699 12.4563 20.6432 12.848L7.53 21.0437C6.86395 21.46 6 20.9812 6 20.1957Z"></path></svg>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+    <div class="article">
+        {% if postType == "podcast" %}
+            <a href="{{ episode }}" target="_blank" class="btn btn-wide">Listen on Spotify</a>
+        {% endif %}
+
+        {{ content | safe }}
+
+        {% if review %}
+        <div class="review">
+            <div class="review-rating">{{ review.rating }}<span>/10</span></div>
+            <h1 class="review-title">{{ review.level }} by {{ review.creator }}</h1>
+                <div class="cols">
+                    <div class="col">
+                        <h2>What I liked:</h2>
+                        <ul>
+                            {% for i in review.pros %}
+                            <li>{{ i }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h2>What I'd like to see:</h2>
+                        <ul>
+                            {% for i in review.cons %}
+                            <li>{{ i }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            <a class="btn btn-wide" href="https://gdbrowser.com/{{ review.id }}" target="_blank">Play Death Moon</a>
+        </div>
+        {% endif %}
+
+        {% if showRelated %}
+        {% if tags[0] == "mods" %}
+            <p>For more information about <a href="/categories/mods/">Geometry Dash mods</a>, make sure to go through our various posts:</p>
+        {% elseif tags[0] == "2.2" %}
+            <p>For more information about <a href="/categories/2.2/">Geometry Dash 2.21</a>, make sure to go through our various posts:</p>
+        {% else %}
+            <p>For more Geometry Dash stories, make sure to go through our various posts:</p>
+        {% endif %}
+        <p>
+            {% for post in collections[tags[0]] | reverse | head(4) %}<a href="{{ post.url }}">{{ post.data.title }}</a>{% if not loop.last %} - {% endif %}{% endfor%}
+        </p>
+        {% endif %}
+    </div>
+</article>
+
+{% if postType == "article" %}
+<h1 class="heading">Up Next</h1>
+
+{% include "partials/posts-nav.njk" %}
+
+<a href="/posts/" class="btn btn-wide">More News</a>
+{% endif %}
+
+{% if postType == "course" %}
+
+    {% set currentPageNum = num - 1 %}
+    {% set totalPagesCount = courselessons %}
+    {% set prevUrl %}/courses/{{ courseslug }}/{% if courseinfo[num-1-1].url %}{{ courseinfo[num-1-1].url }}/{% endif %}{% endset %}
+    {% set nextUrl %}/courses/{{ courseslug }}/{{ courseinfo[num-1+1].url }}/{% endset %}
+
+    {% if (num-1) < 1 %}
+        {% set prevUrl = false %}
+    {% endif %}
+
+    {% if (num-1) >= (courselessons-1) %}
+        {% set nextUrl = false %}
+    {% endif %}
+
+    {% include "partials/pagination.njk" %}
+
+{% endif %}

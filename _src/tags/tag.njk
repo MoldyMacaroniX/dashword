@@ -1,0 +1,46 @@
+---
+layout: templates/browse.njk
+
+pagination:
+    data: collections.tagPages
+    size: 1
+    alias: tagData
+permalink: "/categories/{{ tagData.tag }}/{% if tagData.pageNum > 1 %}{{ tagData.pageNum }}/{% endif %}index.html"
+eleventyComputed:
+    title: "Posted in {% set tagInfos = tagData.tag | getTagInfo(tagInfo) %}{{ tagInfos.name | title }}"
+---
+
+{# Normalize variables #}
+{% set paginationBaseUrl = "/categories/" ~ tagData.tag ~ "/" %}
+{% set currentPageNum = tagData.pageNum %}
+{% set totalPagesCount = tagData.totalPages %}
+
+{% if currentPageNum == 2 %}
+    {% set prevUrl = paginationBaseUrl %}
+{% elif currentPageNum > 2 %}
+    {% set prevUrl = paginationBaseUrl ~ (currentPageNum - 1) ~ "/" %}
+{% else %}
+     {% set prevUrl = null %}
+{% endif %}
+
+{% if currentPageNum < totalPagesCount %}
+    {% set nextUrl = paginationBaseUrl ~ (currentPageNum + 1) ~ "/" %}
+{% else %}
+    {% set nextUrl = null %}
+{% endif %}
+
+{% set tagInfos = tagData.tag | getTagInfo(tagInfo) %}
+{% if tagInfos.desc %}
+<div class="article">
+    <p>{{ tagInfos.desc }}</p>
+</div>
+{% endif %}
+
+{% for post in tagData.posts %}
+    {% include "partials/posts.njk" %}
+    {% if ((loop.index == 2) or (loop.index == 4) or (loop.index == 6) or (loop.index == 8)) and (not loop.last) %}
+        {% include "ads/content.njk" %}
+    {% endif %}
+{% endfor %}
+
+{% include "partials/pagination.njk" %}

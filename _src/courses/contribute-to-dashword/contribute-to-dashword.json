@@ -1,0 +1,30 @@
+{
+    "coursename":"Contribute To Dashword",
+    "courseslug":"contribute-to-dashword",
+    "image":"/assets/img/dashword2.png",
+    "courselessons":5,
+    "courseinfo": [
+        {
+            "name":"Welcome",
+            "url":null
+        },
+        {
+            "name":"Topics",
+            "url":"topics"
+        },
+        {
+            "name":"Style Guide",
+            "url":"style-guide"
+        },
+        {
+            "name":"Template",
+            "url":"template"
+        },
+        {
+            "name":"Submission",
+            "url":"submission"
+        }
+    ],
+    "date":"2026-10-15",
+    "author":"dashword"
+}

@@ -1,0 +1,318 @@
+[
+    {
+        "key": "dashword",
+        "name": "Dashword Staff",
+        "bio": "Latest posts shared by the Dashword team!",
+        "photo": "/assets/branding/app.png",
+        "website": "www.dashword.net",
+        "verified": true,
+        "staff": true,
+        "twitter": "DashwordGD",
+        "discord": "SqZuGCpHMm",
+        "desc": "This account publishes articles from both Dashword staff and user submissions."
+    },
+    {
+        "key": "podcast",
+        "name": "The GD Podcast",
+        "bio": "Latest posts from The GD Podcast team!",
+        "photo": "/assets/branding/app.png",
+        "website": "www.dashword.net/podcast/",
+        "verified": true,
+        "staff": true
+    },
+    {
+        "key": "gdcs",
+        "name": "Creator School",
+        "bio": "The Geometry Dash Creator School is a place where aspiring creators can turn into experienced level makers!",
+        "photo": "/assets/avatars/gdcspfp.jpg",
+        "youtube": "GDCreatorSchool",
+        "customyt": true,
+        "twitter": "GDCreatorSchool",
+        "discord": "gdlevels",
+        "verified": true,
+        "partner": true
+    },
+    {
+        "key": "moldy",
+        "name": "Moldy",
+        "bio": "I promise I'm fresh despite the name!",
+        "photo": "/assets/avatars/moldy.webp",
+        "youtube": "moldygd",
+        "handle": true,
+        "twitter": "moldymacaronix",
+        "discord": "PqTUgx6",
+        "gdbrowser": "CreatorMoldy",
+        "website": "www.moldygd.com",
+        "verified": true,
+        "staff": true,
+        "desc": "Moldy is a well known Geometry Dash YouTuber with over half a million subscribers. He created Dashword and serves as its lead developer."
+    },
+    {
+        "key": "esmik",
+        "name": "EsmiK",
+        "bio": "I'm a Czech GD YouTuber, artist, editor and pretty much mediocre at everything!",
+        "photo": "/assets/avatars/user.png",
+        "youtube": "UCc-MJ1ijeGtfFdMwRdSGlqw",
+        "twitter": "Esmik15",
+        "discord": "ZUcF8UvUgM",
+        "gdbrowser": "esmik64"
+    },
+    {
+        "key": "cob",
+        "name": "Cob",
+        "bio": "BERP BERP BERP",
+        "photo": "/assets/avatars/image_1.webp",
+        "youtube": "Cobgd",
+        "handle": true,
+        "twitch": "gdcob",
+        "twitter": "gdcob2",
+        "discord": "bZcjgYUqHB",
+        "gdbrowser": "gdcob",
+        "verified": true
+    },
+    {
+        "key": "omegafalcon",
+        "name": "OmegaFalcon",
+        "photo": "/assets/avatars/image_2.webp",
+        "youtube": "OmegaFalcon",
+        "customyt": true,
+        "twitter": "OmegaFalcon_",
+        "gdbrowser": "OmegaFalcon",
+        "verified": true
+    },
+    {
+        "key": "ryli",
+        "name": "Ryli",
+        "bio": "Hey! My name is Ryli, I'm a 16 year old trans girl from Canada. I'm a GD creator and an aspiring in-game moderator.",
+        "photo": "/assets/avatars/user.png",
+        "youtube": "Ryli06",
+        "twitch": "rily06",
+        "gdbrowser": "Ryli06"
+    },
+    {
+        "key": "mosquitogirl",
+        "name": "Mosquito Girl",
+        "bio": "I talk about words sometimes.",
+        "photo": "/assets/avatars/image_3.webp",
+        "youtube": "UC2zAF2O_LmmkpxBcWfhhz7g",
+        "twitter": "Mosquito__Girl",
+        "gdbrowser": "MosquitoGirl"
+    },
+    {
+        "key": "airplaneniner",
+        "name": "AirplaneNiner",
+        "bio": "An aviation enthusiast and a software programmer.",
+        "photo": "/assets/avatars/user.png",
+        "youtube": "UC-hJIJWWxRn9ha-rhGtk7hA",
+        "discord": "MFP4CPVjC9",
+        "gdbrowser": "Airplaneguy9"
+    },
+    {
+        "key": "emperorxeq",
+        "name": "Xeqoir",
+        "bio": "I'm a GD creator and server owner.",
+        "photo": "/assets/avatars/image_4.webp",
+        "youtube": "UCR19Dn-90bX_zNZzGr1Ewrg",
+        "discord": "9mAPF444Fa",
+        "gdbrowser": "Dashphamy"
+    },
+    {
+        "key": "bizaare",
+        "name": "Bizaare",
+        "photo": "/assets/avatars/image_5.webp",
+        "youtube": "UCRMOkByfpjmyu609tHi3apA",
+        "twitch": "bizaaregd",
+        "twitter": "BizaareGD",
+        "discord": "58HnfZKH4d",
+        "gdbrowser": "Bizaare",
+        "verified": true
+    },
+    {
+        "key": "isla",
+        "name": "Isla",
+        "photo": "/assets/avatars/image_6.webp",
+        "youtube": "UCwtpP1jVQxyCvCjrtiIV5gA",
+        "twitter": "islatw"
+    },
+    {
+        "key": "lundshurk",
+        "name": "Lundshurk",
+        "bio": "geometry dash gamer 2014",
+        "photo": "/assets/avatars/image_7.webp",
+        "youtube": "UCiJXfE3_a5c36TA64iK3hvw",
+        "twitch": "lundshurk",
+        "gdbrowser": "lundshurk"
+    },
+    {
+        "key": "jordantrs",
+        "name": "JordanTRS",
+        "photo": "/assets/avatars/image_8.webp",
+        "youtube": "UCoqfw6GG_VlaUlJ2UIgHR7g",
+        "twitch": "realjordantrs",
+        "twitter": "jordantrs1",
+        "discord": "YegB7N9upM",
+        "gdbrowser": "JordanTRS"
+    },
+    {
+        "key": "enzote",
+        "name": "Enzote",
+        "bio": "Enzote, aka: MikaKC, is a C++ and Web developer who plays Geometry Dash!",
+        "photo": "/assets/avatars/user.png",
+        "gdbrowser": "Enzote"
+    },
+    {
+        "key": "c649007",
+        "name": "Clustifle649",
+        "bio": "Dashword.net author. Geometry Dash YouTuber and also was a layout creator.",
+        "photo": "/assets/avatars/image_9.webp",
+        "youtube": "UCljTW_HL82F30ejqscmXEBA",
+        "twitter": "clustifle649",
+        "gdbrowser": "Clustifle649"
+    },
+    {
+        "key": "yuval52",
+        "name": "Yuval52",
+        "bio": "An israeli GD player who also plays beat saber.",
+        "photo": "/assets/avatars/image_10.webp",
+        "youtube": "UC87DP3YdG2ngrvDsEL8Qsyw",
+        "twitch": "yuval522 ",
+        "twitter": "yuval521",
+        "gdbrowser": "yuval52"
+    },
+    {
+        "key": "adya",
+        "name": "Adya",
+        "bio": "I'm a Moroccan 17 year old that has been playing gd for 6 years.",
+        "photo": "/assets/avatars/user.png",
+        "twitter": "AdyaGD",
+        "gdbrowser": "Adya"
+    },
+    {
+        "key": "fr0stedm4c",
+        "name": "Fr0stedM4c",
+        "bio": "Beat it or you dont need it...",
+        "photo": "/assets/avatars/image_11.webp",
+        "youtube": "UCQyHS0gyRljnI5VzDo3cEyg",
+        "twitch": "fr0stedm4c",
+        "twitter": "Fr0stedM4c",
+        "discord": "T7aj9Ymnre",
+        "gdbrowser": "Fr0stedM4c"
+    },
+    {
+        "key": "thestupiddodo",
+        "name": "TheStupidDodo",
+        "bio": "I am a Youtuber and Twitch streamer just tryna show people my stuff :)",
+        "photo": "https://i.ibb.co/L981t8C/Untitled-design-5.jpg",
+        "youtube": "TheStupidDodo",
+        "customyt": true,
+        "twitch": "TheStupidDodo",
+        "discord": "Pnt5dcmMjJ",
+        "gdbrowser": "TheStupidDodo"
+    },
+    {
+        "key": "kylu",
+        "name": "Kylu",
+        "bio": "Experienced teenage Geometry Dash player that loves writing and has big goals in life.",
+        "photo": "/assets/avatars/image_13.webp",
+        "youtube": "UCTQtP4DP5TBy0oOi2BnsJnA",
+        "twitch": "kylarc621",
+        "twitter": "Kylu15822370",
+        "gdbrowser": "Kylu"
+    },
+    {
+        "key": "dolphin_02",
+        "name": "Dolphin_02",
+        "bio": "Youtuber with no subs and creator with no creator points... Look what do you want from me",
+        "photo": "/assets/avatars/image_14.webp",
+        "youtube": "UCqhF9FFFbP2HNGv5Dn4_5WA",
+        "gdbrowser": "Dolphin02"
+    },
+    {
+        "key": "mathgenius",
+        "name": "MathGenius",
+        "bio": "Geometry Dash Content Creator // Graphic Design, Film, Journalism Student // Geography and Music Enthusiast ",
+        "photo": "/assets/avatars/image_15.webp",
+        "youtube": "@MathGeniusGD",
+        "twitch": "mathgeniusgd",
+        "handle": true,
+        "twitter": "mathgeniusgd",
+        "discord": "sZMCpj7Pwq",
+        "gdbrowser": "MathGeniusGD",
+        "verified": true
+    },
+    {
+        "key": "herozer",
+        "name": "herozer",
+        "bio": "crazy",
+        "photo": "/assets/avatars/user.png",
+        "youtube": "UCQaSBzSycKka6lktsw2j7zw",
+        "twitch": "herozerrr",
+        "twitter": "herozer7",
+        "gdbrowser": "herozer"
+    },
+    {
+        "key": "brad",
+        "name": "Brad",
+        "photo": "/assets/avatars/image_16.webp",
+        "youtube": "zinkz",
+        "customyt": true,
+        "twitch": "izinkz",
+        "twitter": "ytzinkz",
+        "gdbrowser": "zinkz",
+        "website": "bradgd.com"
+    },
+    {
+        "key": "wbilgini",
+        "name": "WBilgini",
+        "bio": "chaos",
+        "photo": "/assets/avatars/user.png",
+        "youtube": "wbilgini",
+        "handle": true,
+        "twitch": "wbilgini",
+        "twitter": "wbilgini",
+        "gdbrowser": "wbilgini"
+    },
+    {
+        "key": "mkczy",
+        "name": "Mkczy",
+        "photo": "/assets/avatars/image_17.webp"
+    },
+    {
+        "key": "liamcomix",
+        "name": "LiamComix",
+        "bio": "i'm not ready for 2.3 guys",
+        "photo": "/assets/avatars/image_18.webp",
+        "gdbrowser": "LiamInGd"
+    },
+    {
+        "key": "mrhoot2000",
+        "name": "MrHoot2000",
+        "photo": "/assets/avatars/user.png",
+        "twitter": "MrHoot2000",
+        "gdbrowser": "MrHoot2000"
+    },
+    {
+        "key": "zsyfy",
+        "name": "zSYFY",
+        "bio": "I like GD History and interesting stuff.",
+        "photo": "/assets/avatars/image_19.webp",
+        "gdbrowser": "zSYFY"
+    },
+    {
+        "key": "blooxen",
+        "name": "BlooXen",
+        "photo": "/assets/avatars/image_20.webp",
+        "youtube": "BlooXen",
+        "handle": true,
+        "gdbrowser": "BlooXen"
+    },
+    {
+        "key": "oxycodine",
+        "name": "oxycodine",
+        "photo": "/assets/avatars/image_21.webp",
+        "youtube": "oxycodinegd",
+        "twitter": "oxycodined",
+        "handle": true,
+        "gdbrowser": "oxycodine"
+    }
+]

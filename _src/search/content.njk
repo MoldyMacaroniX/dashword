@@ -1,0 +1,11 @@
+---
+permalink: /content.json
+eleventyExcludeFromCollections: true
+---
+
+{
+{% for post in collections.posts %}
+    "{{ post.url }}": {% set var %}{% include "partials/posts.njk" %}{% endset %}{{ var | dump | safe }}
+    {% if not loop.last %},{% endif %}
+{% endfor %}
+}
