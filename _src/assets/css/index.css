@@ -725,6 +725,8 @@ hr {
     flex-direction: column;
     justify-content: center;
     gap: var(--gap-small);
+    width: 100%;
+    min-width: 0;
 }
 
 .unit img {
