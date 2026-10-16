@@ -485,12 +485,16 @@ html {
     min-width: 0;
 }
 
-.main-content > * {
+.main-content > *, .spacer > * {
     margin-bottom: var(--gap);
 }
 
-.main-content > *:last-child {
+.main-content > *:last-child, .spacer > *:last-child {
     margin-bottom: 0;
+}
+
+.main-content {
+    width: calc(100% - 300px - var(--gap)) !important;
 }
 
 /* Post */
@@ -1760,6 +1764,9 @@ th:last-child, td:last-child {
     .footer-links {
         display: grid;
         grid-template-columns: 1fr;
+    }
+    .main-content {
+        width: 100% !important;
     }
 }
 
