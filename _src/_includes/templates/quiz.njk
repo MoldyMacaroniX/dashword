@@ -33,7 +33,9 @@ totalQ++;
     <label class="option btn"><input value="3" onclick="updateRadios()" type="radio" name="radio{{ loop.index }}">{{ i.options[2] }}</label>
     <label class="option btn"><input value="4" onclick="updateRadios()" type="radio" name="radio{{ loop.index }}">{{ i.options[3] }}</label>
 </div>
-{% include "ads/post.html" %}
+{% if (not loop.last) and (loop.index % 2 == 0) %}
+    {% include "ads/post.html" %}
+{% endif %}
 {% endfor %}
 
 <div id="uncomplete" class="article">

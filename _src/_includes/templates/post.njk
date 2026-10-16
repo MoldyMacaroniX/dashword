@@ -143,6 +143,10 @@ layout: templates/sidebar.njk
     </div>
 </article>
 
+{% if postType != "course" %}
+{% include "ads/related.njk" %}
+{% endif %}
+
 {% if postType == "article" %}
 <h1 class="heading">Up Next</h1>
 
@@ -168,4 +172,10 @@ layout: templates/sidebar.njk
 
     {% include "partials/pagination.njk" %}
 
+{% endif %}
+
+{% if postType == "article" %}
+<div class="mobile-only">
+    {% include "ads/wide.njk" %}
+</div>
 {% endif %}
