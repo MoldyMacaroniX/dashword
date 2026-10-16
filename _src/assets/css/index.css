@@ -728,12 +728,13 @@ hr {
 }
 
 .unit-wrapper, .unit {
-    width: 100%;
     min-width: 0;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
+    flex: 1 1 100%;
+    min-width: 0;
 }
 
 .unit {
