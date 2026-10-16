@@ -479,10 +479,18 @@ html {
 }
 
 .main-content, .spacer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: var(--gap); */
     min-width: 0;
+}
+
+.main-content > * {
+    margin-bottom: var(--gap);
+}
+
+.main-content > *:last-child {
+    margin-bottom: 0;
 }
 
 /* Post */
@@ -844,6 +852,7 @@ ins.adsbygoogle[data-ad-status="unfilled"] {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
+    min-width: 0;
 }
 
 .article .aspect {
