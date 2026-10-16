@@ -27,6 +27,12 @@ layout: base.njk
     {% endif %}
     <div class="main-content">
         {{ content | safe }}
+
+        {% if not postType %}
+            <div class="mobile-only">
+                {% include "ads/wide.njk" %}
+            </div>
+        {% endif %}
     </div>
     {% if postType != "course" %}
     <aside class="sidebar" id="sidebar">
